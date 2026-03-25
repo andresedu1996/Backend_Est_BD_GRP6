@@ -77,3 +77,10 @@ npm start
 - `GET /health/db` confirma si la conexion a Supabase funciona.
 - Si Supabase exige SSL, deja `DB_SSL=true`.
 - Si instalaste Node.js y `npm` no responde en la terminal, reinicia la terminal o corrige el PATH.
+
+
+## Datos de ENV
+
+- PORT=3000
+DATABASE_URL=postgresql://postgres:Lp9iAyjpyf!fv4!@db.jnayohlizegcgzsvxjqx.supabase.co:5432/postgres
+DB_SSL=true

@@ -53,6 +53,33 @@ app.get("/api/personas", async (_req, res, next) => {
   }
 });
 
+app.post("/api/personas", async (req, res, next) => {
+  const { nombre, correo, fecha_nacimiento, direccion, rol } = req.body;
+
+  if (!nombre || !correo || !rol) {
+    return res.status(400).json({
+      ok: false,
+      message: "nombre, correo y rol son obligatorios.",
+    });
+  }
+
+  try {
+    const result = await pool.query(
+      `INSERT INTO persona (nombre, correo, fecha_nacimiento, direccion, rol)
+       VALUES ($1, $2, $3, $4, $5)
+       RETURNING id_persona, nombre, correo, fecha_nacimiento, direccion, rol`,
+      [nombre, correo, fecha_nacimiento || null, direccion || null, rol]
+    );
+
+    res.status(201).json({
+      ok: true,
+      data: result.rows[0],
+    });
+  } catch (error) {
+    next(error);
+  }
+});
+
 app.use((err, _req, res, _next) => {
   console.error(err);
 

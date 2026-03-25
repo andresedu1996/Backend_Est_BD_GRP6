@@ -1,5 +1,19 @@
 {
+  "name": "backend_est_bd_grp6",
+  "version": "1.0.0",
+  "description": "Backend base con Node.js, Express y PostgreSQL para Supabase.",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js"
+  },
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
     "pg": "^8.20.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }

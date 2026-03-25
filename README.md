@@ -1,82 +1,79 @@
 # Backend_Est_BD_GRP6
 
-Repositorio del backend del proyecto, con documentación, scripts SQL y colección de Postman como parte de los entregables finales.
+Backend base con Node.js, Express y PostgreSQL para trabajar con una base de datos en Supabase.
 
-## Entregables finales
+## Requisitos
 
-1. Link del repositorio backend (GitHub):
-   - Agregar aquí el enlace del repositorio.
-2. Carpeta `/docs` dentro del repositorio con:
-   - Diagrama Chen en PDF o imagen
-   - Diagrama Crow's Foot en PDF o imagen
-   - Diagrama de base de datos en Supabase
-3. Carpeta `/sql` con:
-   - `schema.sql`
-   - `seed.sql`
-4. Carpeta `/postman` con:
-   - colección de Postman
-   - environment de Postman
-5. `README.md` con:
-   - instrucciones para ejecutar el backend
-   - variables de entorno requeridas
+- Node.js 18 o superior
+- npm 9 o superior
+- Un proyecto de Supabase con acceso a la cadena de conexion de PostgreSQL
 
-## Estructura del repositorio
+## Archivos importantes
 
 ```text
 /
-|-- docs/
-|-- postman/
+|-- .env.example
+|-- db.js
+|-- server.js
 |-- sql/
-`-- README.md
-```
-
-## Cómo ejecutar el backend
-
-Completar esta sección según la tecnología utilizada en el proyecto.
-
-Ejemplo general:
-
-```bash
-# instalar dependencias
-npm install
-
-# ejecutar en desarrollo
-npm run dev
+|   |-- schema.sql
+|   `-- seed.sql
+`-- package.json
 ```
 
 ## Variables de entorno
 
-Crear un archivo `.env` con las variables necesarias para el proyecto.
-
-Ejemplo:
+Crea un archivo `.env` tomando como base `.env.example`.
 
 ```env
 PORT=3000
-DATABASE_URL=
-SUPABASE_URL=
-SUPABASE_KEY=
+DATABASE_URL=postgresql://postgres:[TU_PASSWORD]@[TU_HOST]:5432/postgres
+DB_SSL=true
 ```
 
-## Contenido esperado por carpeta
+### Como obtener `DATABASE_URL` en Supabase
 
-### `/docs`
+1. Entra a tu proyecto de Supabase.
+2. Ve a `Project Settings`.
+3. Abre la seccion `Database`.
+4. Copia la cadena `Connection string` de tipo `URI`.
+5. Pegala en `DATABASE_URL`.
 
-Incluir la documentación visual del modelo de datos:
+## Instalacion
 
-- Diagrama Chen
-- Diagrama Crow's Foot
-- Diagrama de base de datos generado en Supabase
+```bash
+npm install
+```
 
-### `/sql`
+## Inicializar la base de datos
 
-Incluir los scripts necesarios para la base de datos:
+Ejecuta el contenido de `sql/schema.sql` en el editor SQL de Supabase.
 
-- `schema.sql`: definición del esquema
-- `seed.sql`: datos iniciales o de prueba
+Si quieres datos de prueba, ejecuta despues `sql/seed.sql`.
 
-### `/postman`
+## Ejecutar el backend
 
-Incluir los archivos para probar la API:
+Modo desarrollo:
 
-- colección de endpoints
-- archivo de entorno con variables configurables
+```bash
+npm run dev
+```
+
+Modo normal:
+
+```bash
+npm start
+```
+
+## Endpoints de prueba
+
+- `GET /`
+- `GET /health`
+- `GET /health/db`
+- `GET /api/personas`
+
+## Notas
+
+- `GET /health/db` confirma si la conexion a Supabase funciona.
+- Si Supabase exige SSL, deja `DB_SSL=true`.
+- Si instalaste Node.js y `npm` no responde en la terminal, reinicia la terminal o corrige el PATH.

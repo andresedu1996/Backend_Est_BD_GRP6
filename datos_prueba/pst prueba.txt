@@ -1,0 +1,13 @@
+
+
+POST
+URL: http://localhost:3000/api/personas
+Header: Content-Type: application/json
+
+{
+  "nombre": "Juan Perez",
+  "correo": "juanperez@example.com",
+  "fecha_nacimiento": "2000-05-10",
+  "direccion": "Tegucigalpa, Honduras",
+  "rol": "cliente"
+}

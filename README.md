@@ -41,6 +41,8 @@ DB_SSL=true
 
 ## Instalacion
 
+- Instalar Node JS https://nodejs.org/en/download
+
 ```bash
 npm install
 ```
@@ -71,6 +73,40 @@ npm start
 - `GET /health`
 - `GET /health/db`
 - `GET /api/personas`
+- `GET /api/personas/:id`
+- `POST /api/personas`
+- `PUT /api/personas/:id`
+- `DELETE /api/personas/:id`
+- `GET /api/telefonos`
+- `GET /api/telefonos/:id`
+- `POST /api/telefonos`
+- `PUT /api/telefonos/:id`
+- `DELETE /api/telefonos/:id`
+- `GET /api/sedes`
+- `GET /api/sedes/:id`
+- `POST /api/sedes`
+- `PUT /api/sedes/:id`
+- `DELETE /api/sedes/:id`
+- `GET /api/actividades`
+- `GET /api/actividades/:id`
+- `POST /api/actividades`
+- `PUT /api/actividades/:id`
+- `DELETE /api/actividades/:id`
+- `GET /api/reservas`
+- `GET /api/reservas/:id`
+- `POST /api/reservas`
+- `PUT /api/reservas/:id`
+- `DELETE /api/reservas/:id`
+- `GET /api/membresias`
+- `GET /api/membresias/:id`
+- `POST /api/membresias`
+- `PUT /api/membresias/:id`
+- `DELETE /api/membresias/:id`
+- `GET /api/pagos`
+- `GET /api/pagos/:id`
+- `POST /api/pagos`
+- `PUT /api/pagos/:id`
+- `DELETE /api/pagos/:id`
 
 ## Notas
 

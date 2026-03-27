@@ -118,5 +118,5 @@ npm start
 ## Datos de ENV
 
 - PORT=3000
-- DATABASE_URL=postgresql://postgres:Lp9iAyjpyf!fv4!@db.jnayohlizegcgzsvxjqx.supabase.co:5432/postgres
+- DATABASE_URL=postgresql://postgres.jnayohlizegcgzsvxjqx:Lp9iAyjpyf%21fv4%21@aws-1-us-east-1.pooler.supabase.com:5432/postgres
 - DB_SSL=true

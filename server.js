@@ -3,12 +3,14 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const pool = require("./db");
+const updateRoutes = require("./routes/update");
 
 const app = express();
 const port = Number(process.env.PORT || 3000);
 
 app.use(cors());
 app.use(express.json());
+app.use("/api", updateRoutes);
 
 function parseId(value) {
   const id = Number(value);

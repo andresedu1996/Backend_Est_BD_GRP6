@@ -47,62 +47,26 @@ VALUES
 select * from actividad;
 
 INSERT INTO reserva (id_persona, id_actividad, fecha_hora, estado, precio_aplicado)
-SELECT p.id_persona, a.id_actividad, v.fecha_hora, v.estado, v.precio_aplicado
-FROM (
-  VALUES
-    ('ana.lopez@example.com', 'Yoga Matutino', '2026-03-28 09:15:00'::timestamp, 'confirmada', 15.00::decimal(10,2)),
-    ('carlos.mejia@example.com', 'Spinning', '2026-03-28 10:00:00'::timestamp, 'pendiente', 18.50::decimal(10,2)),
-    ('sofia.martinez@example.com', 'Pilates', '2026-03-28 11:30:00'::timestamp, 'confirmada', 16.75::decimal(10,2)),
-    ('ana.lopez@example.com', 'Zumba', '2026-03-29 08:45:00'::timestamp, 'cancelada', 12.00::decimal(10,2)),
-    ('carlos.mejia@example.com', 'Cross Training', '2026-03-29 12:10:00'::timestamp, 'confirmada', 22.00::decimal(10,2))
-) AS v(correo, nombre_actividad, fecha_hora, estado, precio_aplicado)
-JOIN persona p
-  ON p.correo = v.correo
-JOIN actividad a
-  ON a.nombre = v.nombre_actividad
-WHERE NOT EXISTS (
-  SELECT 1
-  FROM reserva r
-  WHERE r.id_persona = p.id_persona
-    AND r.id_actividad = a.id_actividad
-    AND r.fecha_hora = v.fecha_hora
-);
+VALUES
+(1, 1, '2026-03-28 09:15:00', 'confirmada', 15.00),
+(5, 2, '2026-03-28 10:00:00', 'pendiente', 18.50),
+(8, 4, '2026-03-28 11:30:00', 'confirmada', 16.75),
+(1, 5, '2026-03-29 08:45:00', 'cancelada', 12.00),
+(5, 3, '2026-03-29 12:10:00', 'confirmada', 22.00),
+(6, 6, '2026-04-05 07:00:00', 'confirmada', 20.00),
+(7, 7, '2026-04-05 18:30:00', 'pendiente', 25.00),
+(1, 8, '2026-04-06 06:00:00', 'confirmada', 10.00);
+select * from reserva;
 
 INSERT INTO membresia (id_persona, tipo_plan, fecha_inicio, fecha_fin, costo, estado)
-SELECT p.id_persona, 'Mensual', '2026-03-01'::date, '2026-03-31'::date, 35.00::decimal(10,2), 'activa'
-FROM persona p
-WHERE p.correo = 'ana.lopez@example.com'
-  AND NOT EXISTS (
-    SELECT 1
-    FROM membresia m
-    WHERE m.id_persona = p.id_persona
-      AND m.tipo_plan = 'Mensual'
-      AND m.fecha_inicio = '2026-03-01'::date
-  );
-
-INSERT INTO membresia (id_persona, tipo_plan, fecha_inicio, fecha_fin, costo, estado)
-SELECT p.id_persona, 'Trimestral', '2026-02-01'::date, '2026-04-30'::date, 95.00::decimal(10,2), 'activa'
-FROM persona p
-WHERE p.correo = 'carlos.mejia@example.com'
-  AND NOT EXISTS (
-    SELECT 1
-    FROM membresia m
-    WHERE m.id_persona = p.id_persona
-      AND m.tipo_plan = 'Trimestral'
-      AND m.fecha_inicio = '2026-02-01'::date
-  );
-
-INSERT INTO membresia (id_persona, tipo_plan, fecha_inicio, fecha_fin, costo, estado)
-SELECT p.id_persona, 'Mensual', '2026-03-15'::date, '2026-04-14'::date, 35.00::decimal(10,2), 'activa'
-FROM persona p
-WHERE p.correo = 'sofia.martinez@example.com'
-  AND NOT EXISTS (
-    SELECT 1
-    FROM membresia m
-    WHERE m.id_persona = p.id_persona
-      AND m.tipo_plan = 'Mensual'
-      AND m.fecha_inicio = '2026-03-15'::date
-  );
+VALUES
+(1, 'Mensual', '2026-03-01', '2026-03-31', 35.00, 'activa'),
+(5, 'Trimestral', '2026-02-01', '2026-04-30', 95.00, 'activa'),
+(8, 'Mensual', '2026-03-15', '2026-04-14', 35.00, 'activa'),
+(6, 'Mensual', '2026-04-01', '2026-04-30', 35.00, 'activa'),
+(7, 'Trimestral', '2026-04-01', '2026-06-30', 95.00, 'activa'),
+(8, 'Trimestral', '2026-01-12', '2026-05-25', 100.00, 'activa');
+select * from membresia;
 
 INSERT INTO pago (id_reserva, id_membresia, fecha, monto, metodo, referencia)
 SELECT

@@ -1,0 +1,11 @@
+{
+    "ok": true,
+    "data": {
+        "id_actividad": 1,
+        "nombre": "Yoga Matutino",
+        "horario": "2026-04-01T14:00:00.000Z",
+        "cupo_max": 20,
+        "costo": "15.00",
+        "id_sede": 2
+    }
+}

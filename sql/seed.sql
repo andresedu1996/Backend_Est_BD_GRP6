@@ -69,49 +69,15 @@ VALUES
 select * from membresia;
 
 INSERT INTO pago (id_reserva, id_membresia, fecha, monto, metodo, referencia)
-SELECT
-  r.id_reserva,
-  m.id_membresia,
-  v.fecha,
-  v.monto,
-  v.metodo,
-  v.referencia
-FROM (
-  VALUES
-    ('ana.lopez@example.com', 'Yoga Matutino', '2026-03-28 09:15:00'::timestamp, NULL::text, NULL::date, '2026-03-28 09:20:00'::timestamp, 15.00::decimal(10,2), 'tarjeta', 'RES-0001'),
-    ('carlos.mejia@example.com', 'Spinning', '2026-03-28 10:00:00'::timestamp, NULL::text, NULL::date, '2026-03-28 10:05:00'::timestamp, 18.50::decimal(10,2), 'efectivo', 'RES-0002'),
-    (NULL::text, NULL::text, NULL::timestamp, 'ana.lopez@example.com', '2026-03-01'::date, '2026-03-01 07:30:00'::timestamp, 35.00::decimal(10,2), 'transferencia', 'MEM-0001'),
-    (NULL::text, NULL::text, NULL::timestamp, 'carlos.mejia@example.com', '2026-02-01'::date, '2026-02-01 08:00:00'::timestamp, 95.00::decimal(10,2), 'tarjeta', 'MEM-0002'),
-    ('sofia.martinez@example.com', 'Pilates', '2026-03-28 11:30:00'::timestamp, NULL::text, NULL::date, '2026-03-28 11:35:00'::timestamp, 16.75::decimal(10,2), 'tarjeta', 'RES-0003'),
-    (NULL::text, NULL::text, NULL::timestamp, 'sofia.martinez@example.com', '2026-03-15'::date, '2026-03-15 09:00:00'::timestamp, 35.00::decimal(10,2), 'efectivo', 'MEM-0003')
-) AS v(
-  reserva_correo,
-  reserva_actividad,
-  reserva_fecha_hora,
-  membresia_correo,
-  membresia_fecha_inicio,
-  fecha,
-  monto,
-  metodo,
-  referencia
-)
-LEFT JOIN persona pr
-  ON pr.correo = v.reserva_correo
-LEFT JOIN actividad a
-  ON a.nombre = v.reserva_actividad
-LEFT JOIN reserva r
-  ON r.id_persona = pr.id_persona
- AND r.id_actividad = a.id_actividad
- AND r.fecha_hora = v.reserva_fecha_hora
-LEFT JOIN persona pm
-  ON pm.correo = v.membresia_correo
-LEFT JOIN membresia m
-  ON m.id_persona = pm.id_persona
- AND m.fecha_inicio = v.membresia_fecha_inicio
-WHERE NOT EXISTS (
-  SELECT 1
-  FROM pago p
-  WHERE p.referencia = v.referencia
-);
-
+VALUES
+(1, 1, '2026-03-28 09:20:00', 15.00, 'tarjeta', 'RES-0001'),
+(2, 2, '2026-03-28 10:05:00', 18.50, 'efectivo', 'RES-0002'),
+(3, 3, '2026-03-28 11:35:00', 16.75, 'tarjeta', 'RES-0003'),
+(NULL, 1, '2026-03-01 07:30:00', 35.00, 'transferencia', 'MEM-0001'),
+(NULL, 2, '2026-02-01 08:00:00', 95.00, 'tarjeta', 'MEM-0002'),
+(NULL, 3, '2026-03-15 09:00:00', 35.00, 'efectivo', 'MEM-0003'),
+(6, 4, '2026-04-05 07:10:00', 20.00, 'tarjeta', 'RES-0004'),
+(7, 5, '2026-04-05 18:40:00', 25.00, 'efectivo', 'RES-0005'),
+(8, 4, '2026-04-06 06:10:00', 10.00, 'transferencia', 'RES-0006');
+select * from pago;
 COMMIT;

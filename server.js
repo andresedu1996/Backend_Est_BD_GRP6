@@ -91,12 +91,13 @@ app.get("/api/personas", async (_req, res, next) => {
     const result = await pool.query(
       "SELECT id_persona, nombre, correo, fecha_nacimiento, direccion, rol FROM persona ORDER BY id_persona ASC"
     );
-    res.json({
+
+    return res.json({
       ok: true,
       data: result.rows,
     });
   } catch (error) {
-    next(error);
+    return next(error);
   }
 });
 
@@ -107,13 +108,23 @@ app.get("/api/personas/:id", async (req, res, next) => {
     return sendBadRequest(res, "id_persona invalido.");
   }
 
-  return getById(
-    res,
-    next,
-    "SELECT id_persona, nombre, correo, fecha_nacimiento, direccion, rol FROM persona WHERE id_persona = $1",
-    id,
-    "Persona"
-  );
+  try {
+    const result = await pool.query(
+      "SELECT id_persona, nombre, correo, fecha_nacimiento, direccion, rol FROM persona WHERE id_persona = $1",
+      [id]
+    );
+
+    if (result.rows.length === 0) {
+      return sendNotFound(res, "Persona");
+    }
+
+    return res.json({
+      ok: true,
+      data: result.rows[0],
+    });
+  } catch (error) {
+    return next(error);
+  }
 });
 
 app.post("/api/personas", async (req, res, next) => {
@@ -433,12 +444,13 @@ app.get("/api/actividades", async (_req, res, next) => {
     const result = await pool.query(
       "SELECT id_actividad, nombre, horario, cupo_max, costo, id_sede FROM actividad ORDER BY id_actividad ASC"
     );
-    res.json({
+
+    return res.json({
       ok: true,
       data: result.rows,
     });
   } catch (error) {
-    next(error);
+    return next(error);
   }
 });
 
@@ -449,13 +461,23 @@ app.get("/api/actividades/:id", async (req, res, next) => {
     return sendBadRequest(res, "id_actividad invalido.");
   }
 
-  return getById(
-    res,
-    next,
-    "SELECT id_actividad, nombre, horario, cupo_max, costo, id_sede FROM actividad WHERE id_actividad = $1",
-    id,
-    "Actividad"
-  );
+  try {
+    const result = await pool.query(
+      "SELECT id_actividad, nombre, horario, cupo_max, costo, id_sede FROM actividad WHERE id_actividad = $1",
+      [id]
+    );
+
+    if (result.rows.length === 0) {
+      return sendNotFound(res, "Actividad");
+    }
+
+    return res.json({
+      ok: true,
+      data: result.rows[0],
+    });
+  } catch (error) {
+    return next(error);
+  }
 });
 
 app.post("/api/actividades", async (req, res, next) => {
@@ -553,12 +575,13 @@ app.get("/api/reservas", async (_req, res, next) => {
     const result = await pool.query(
       "SELECT id_reserva, id_persona, id_actividad, fecha_hora, estado, precio_aplicado FROM reserva ORDER BY id_reserva ASC"
     );
-    res.json({
+
+    return res.json({
       ok: true,
       data: result.rows,
     });
   } catch (error) {
-    next(error);
+    return next(error);
   }
 });
 
@@ -569,13 +592,23 @@ app.get("/api/reservas/:id", async (req, res, next) => {
     return sendBadRequest(res, "id_reserva invalido.");
   }
 
-  return getById(
-    res,
-    next,
-    "SELECT id_reserva, id_persona, id_actividad, fecha_hora, estado, precio_aplicado FROM reserva WHERE id_reserva = $1",
-    id,
-    "Reserva"
-  );
+  try {
+    const result = await pool.query(
+      "SELECT id_reserva, id_persona, id_actividad, fecha_hora, estado, precio_aplicado FROM reserva WHERE id_reserva = $1",
+      [id]
+    );
+
+    if (result.rows.length === 0) {
+      return sendNotFound(res, "Reserva");
+    }
+
+    return res.json({
+      ok: true,
+      data: result.rows[0],
+    });
+  } catch (error) {
+    return next(error);
+  }
 });
 
 app.post("/api/reservas", async (req, res, next) => {
@@ -809,12 +842,13 @@ app.get("/api/pagos", async (_req, res, next) => {
     const result = await pool.query(
       "SELECT id_pago, id_reserva, id_membresia, fecha, monto, metodo, referencia FROM pago ORDER BY id_pago ASC"
     );
-    res.json({
+
+    return res.json({
       ok: true,
       data: result.rows,
     });
   } catch (error) {
-    next(error);
+    return next(error);
   }
 });
 
@@ -825,13 +859,23 @@ app.get("/api/pagos/:id", async (req, res, next) => {
     return sendBadRequest(res, "id_pago invalido.");
   }
 
-  return getById(
-    res,
-    next,
-    "SELECT id_pago, id_reserva, id_membresia, fecha, monto, metodo, referencia FROM pago WHERE id_pago = $1",
-    id,
-    "Pago"
-  );
+  try {
+    const result = await pool.query(
+      "SELECT id_pago, id_reserva, id_membresia, fecha, monto, metodo, referencia FROM pago WHERE id_pago = $1",
+      [id]
+    );
+
+    if (result.rows.length === 0) {
+      return sendNotFound(res, "Pago");
+    }
+
+    return res.json({
+      ok: true,
+      data: result.rows[0],
+    });
+  } catch (error) {
+    return next(error);
+  }
 });
 
 app.post("/api/pagos", async (req, res, next) => {

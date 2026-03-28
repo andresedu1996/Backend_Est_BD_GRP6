@@ -1,0 +1,11 @@
+{
+    "ok": true,
+    "data": {
+        "id_persona": 2,
+        "nombre": "Pablo Perez",
+        "correo": "pabloperez@example.com",
+        "fecha_nacimiento": "2000-05-10T06:00:00.000Z",
+        "direccion": "Col. Pedregal, San Pedro Sula",
+        "rol": "cliente"
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "ok": true,
+    "data": {
+        "id_pago": 10,
+        "id_reserva": 1,
+        "id_membresia": null,
+        "fecha": "2026-03-30T16:15:00.000Z",
+        "monto": "15.00",
+        "metodo": "tarjeta",
+        "referencia": "POSTMAN-PAGO-001"
+    }
+}

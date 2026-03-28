@@ -1,0 +1,102 @@
+{
+  "info": {
+    "_postman_id": "8e45cbd8-607d-41cf-9fd7-33c3e4fb03f5",
+    "name": "Pagos",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53204846",
+    "_collection_link": "https://go.postman.co/collection/53204846-8e45cbd8-607d-41cf-9fd7-33c3e4fb03f5?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "POST /api/pagos",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id_reserva\": 1,\r\n  \"fecha\": \"2026-03-30T10:15:00\",\r\n  \"monto\": 15.0,\r\n  \"metodo\": \"tarjeta\",\r\n  \"referencia\": \"POSTMAN-PAGO-001\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/pagos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "pagos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "PUT /api/pagos",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id_reserva\": 1,\r\n  \"fecha\": \"2026-03-30T10:15:00\",\r\n  \"monto\": 25.0,\r\n  \"metodo\": \"tarjeta VISA\",\r\n  \"referencia\": \"POSTMAN-PAGO-001\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/pagos/10",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "pagos",
+            "10"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST /api/pagos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/pagos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "pagos"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

@@ -9,7 +9,7 @@ VALUES
 ('Carlos Mejia', 'carlos.mejia@example.com', '1995-08-29', 'Col. Kennedy, Tegucigalpa', 'cliente'),
 ('Laura Santos', 'laura.santos@example.com', '1992-02-18', 'Col. Tepeyac, Tegucigalpa', 'administrador'),
 ('Miguel Rivera', 'miguel.rivera@example.com', '1990-11-03', 'Res. El Trapiche, Tegucigalpa', 'entrenador'),
-('Sofia Martinez', 'sofia.martinez@example.com', '2001-06-21', 'Col. Miraflores, Tegucigalpa', 'cliente')
+('Sofia Martinez', 'sofia.martinez@example.com', '2001-06-21', 'Col. Miraflores, Tegucigalpa', 'cliente'),
 ('Luis Herrera', 'luis.herrera@example.com', '1993-07-15', 'Col. Florencia, San Pedro Sula', 'cliente'),
 ('Mariana Castillo', 'mariana.castillo@example.com', '1999-01-22', 'Barrio Guamilito, San Pedro Sula', 'cliente'),
 ('Jose Alvarez', 'jose.alvarez@example.com', '1988-09-10', 'Col. Trejo, San Pedro Sula', 'entrenador'),

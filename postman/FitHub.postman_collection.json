@@ -1,0 +1,559 @@
+{
+  "info": {
+    "_postman_id": "52df00e6-b24b-495d-8b70-0cc4e3b0e84d",
+    "name": "FitHub",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53204846",
+    "_collection_link": "https://go.postman.co/collection/53204846-52df00e6-b24b-495d-8b70-0cc4e3b0e84d?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Personas",
+      "item": [
+        {
+          "name": "Post API Personas Copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nombre\": \"Eduardo Lopez\",\r\n  \"correo\": \"elopez@example.com\",\r\n  \"fecha_nacimiento\": \"1996-03-09\",\r\n  \"direccion\": \"Rio Piedras San Pedro Sula, Honduras\",\r\n  \"rol\": \"entrenador\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/personas/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "personas",
+                ""
+              ]
+            },
+            "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+          },
+          "response": []
+        },
+        {
+          "name": "PUT /api/personas/ Copy",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nombre\": \"Pablo Perez\",\r\n  \"correo\": \"pabloperez@example.com\",\r\n  \"fecha_nacimiento\": \"2000-05-10\",\r\n  \"direccion\": \"Col. Pedregal, San Pedro Sula\",\r\n  \"rol\": \"cliente\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/personas/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "personas",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get /api/personas/1 Copy",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/personas/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "personas",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE /api/personas Copy",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/personas/14",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "personas",
+                "14"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Pagos",
+      "item": [
+        {
+          "name": "POST /api/pagos",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id_reserva\": 1,\r\n  \"fecha\": \"2026-03-30T10:15:00\",\r\n  \"monto\": 15.0,\r\n  \"metodo\": \"tarjeta\",\r\n  \"referencia\": \"POSTMAN-PAGO-001\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/pagos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "pagos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT /api/pagos",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id_reserva\": 1,\r\n  \"fecha\": \"2026-03-30T10:15:00\",\r\n  \"monto\": 25.0,\r\n  \"metodo\": \"tarjeta VISA\",\r\n  \"referencia\": \"POSTMAN-PAGO-001\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/pagos/10",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "pagos",
+                "10"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /api/pagos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/pagos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "pagos"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Actividades",
+      "item": [
+        {
+          "name": "GET /api/actividades/1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/actividades/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "actividades",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE /api/actividades/",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/actividades/9",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "actividades",
+                "9"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /api/actividades",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nombre\": \"Boxeo\",\r\n  \"horario\": \"2026-04-05T16:00:00\",\r\n  \"cupo_max\": 14,\r\n  \"costo\": 20.5,\r\n  \"id_sede\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/actividades",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "actividades"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT /api/actividades/1",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nombre\": \"Yoga Matutino Pro\",\r\n  \"horario\": \"2026-04-01T08:30:00\",\r\n  \"cupo_max\": 25,\r\n  \"costo\": 27.0,\r\n  \"id_sede\": 2\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/actividades/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "actividades",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Reservas",
+      "item": [
+        {
+          "name": "POST /api/reservas",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id_persona\": 1,\r\n  \"id_actividad\": 2,\r\n  \"fecha_hora\": \"2026-03-30T09:00:00\",\r\n  \"estado\": \"confirmada\",\r\n  \"precio_aplicado\": 18.5\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/reservas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "reservas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET /api/reservas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/reservas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "reservas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE /api/reservas/",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/reservas/9",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "reservas",
+                "9"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Sedes",
+      "item": [
+        {
+          "name": "PUT /api/sedes/",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nombre\": \"Sede Sur Renovada\",\r\n  \"direccion\": \"Col. Prado Alto, San Pedro Sula\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/sedes/3",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "sedes",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /api/sedes",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nombre\": \"Sede Este\",\r\n  \"direccion\": \"Plaza Proceres, San Pedro Sula\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/sedes",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "sedes"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE /api/sedes",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/sedes/6",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "sedes",
+                "6"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET /api/sedes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/sedes/6",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "sedes",
+                "6"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

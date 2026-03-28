@@ -1,12 +1,11 @@
 {
     "ok": true,
     "data": {
-        "id_pago": 10,
-        "id_reserva": 1,
-        "id_membresia": null,
-        "fecha": "2026-03-30T16:15:00.000Z",
-        "monto": "15.00",
-        "metodo": "tarjeta",
-        "referencia": "POSTMAN-PAGO-001"
+        "id_actividad": 9,
+        "nombre": "Boxeo",
+        "horario": "2026-04-05T22:00:00.000Z",
+        "cupo_max": 14,
+        "costo": "20.50",
+        "id_sede": 1
     }
 }

@@ -1,11 +1,11 @@
 {
     "ok": true,
     "data": {
-        "id_persona": 2,
-        "nombre": "Pablo Perez",
-        "correo": "pabloperez@example.com",
-        "fecha_nacimiento": "2000-05-10T06:00:00.000Z",
-        "direccion": "Col. Pedregal, San Pedro Sula",
-        "rol": "cliente"
+        "id_actividad": 1,
+        "nombre": "Yoga Matutino Pro",
+        "horario": "2026-04-01T14:30:00.000Z",
+        "cupo_max": 25,
+        "costo": "27.00",
+        "id_sede": 2
     }
 }

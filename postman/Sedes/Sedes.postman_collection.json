@@ -1,0 +1,124 @@
+{
+  "info": {
+    "_postman_id": "dbad3d27-04fd-4ba3-b43d-bf090c019408",
+    "name": "Sedes",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53204846",
+    "_collection_link": "https://go.postman.co/collection/53204846-dbad3d27-04fd-4ba3-b43d-bf090c019408?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "PUT /api/sedes/",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Sede Sur Renovada\",\r\n  \"direccion\": \"Col. Prado Alto, San Pedro Sula\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/sedes/3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "sedes",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST /api/sedes",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Sede Este\",\r\n  \"direccion\": \"Plaza Proceres, San Pedro Sula\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/sedes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "sedes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "DELETE /api/sedes",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/sedes/6",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "sedes",
+            "6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET /api/sedes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/sedes/6",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "sedes",
+            "6"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

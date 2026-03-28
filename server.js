@@ -89,12 +89,13 @@ app.get("/api/personas", async (_req, res, next) => {
     const result = await pool.query(
       "SELECT id_persona, nombre, correo, fecha_nacimiento, direccion, rol FROM persona ORDER BY id_persona ASC"
     );
-    res.json({
+
+    return res.json({
       ok: true,
       data: result.rows,
     });
   } catch (error) {
-    next(error);
+    return next(error);
   }
 });
 
@@ -105,13 +106,23 @@ app.get("/api/personas/:id", async (req, res, next) => {
     return sendBadRequest(res, "id_persona invalido.");
   }
 
-  return getById(
-    res,
-    next,
-    "SELECT id_persona, nombre, correo, fecha_nacimiento, direccion, rol FROM persona WHERE id_persona = $1",
-    id,
-    "Persona"
-  );
+  try {
+    const result = await pool.query(
+      "SELECT id_persona, nombre, correo, fecha_nacimiento, direccion, rol FROM persona WHERE id_persona = $1",
+      [id]
+    );
+
+    if (result.rows.length === 0) {
+      return sendNotFound(res, "Persona");
+    }
+
+    return res.json({
+      ok: true,
+      data: result.rows[0],
+    });
+  } catch (error) {
+    return next(error);
+  }
 });
 
 app.post("/api/personas", async (req, res, next) => {

@@ -19,24 +19,14 @@ ON CONFLICT (correo) DO NOTHING;
 select * from persona;
 
 INSERT INTO telefono (id_persona, numero)
-SELECT p.id_persona, v.numero
-FROM persona p
-JOIN (
-  VALUES
-    ('ana.lopez@example.com', '9999-0001'),
-    ('ana.lopez@example.com', '2234-1001'),
-    ('carlos.mejia@example.com', '9999-0002'),
-    ('laura.santos@example.com', '9999-0003'),
-    ('miguel.rivera@example.com', '9999-0004'),
-    ('sofia.martinez@example.com', '9999-0005')
-) AS v(correo, numero)
-  ON p.correo = v.correo
-WHERE NOT EXISTS (
-  SELECT 1
-  FROM telefono t
-  WHERE t.id_persona = p.id_persona
-    AND t.numero = v.numero
-);
+VALUES
+(1, '9999-0001'),
+(1, '2234-1001'),
+(5, '9999-0002'),
+(6, '9999-0003'),
+(7, '9999-0004'),
+(8, '9999-0005');
+select * from telefono;
 
 INSERT INTO sede (nombre, direccion)
 VALUES
@@ -45,24 +35,16 @@ VALUES
 select * from sede;
 
 INSERT INTO actividad (nombre, horario, cupo_max, costo, id_sede)
-SELECT v.nombre, v.horario, v.cupo_max, v.costo, s.id_sede
-FROM (
-  VALUES
-    ('Yoga Matutino', '2026-04-01 08:00:00'::timestamp, 20, 15.00::decimal(10,2), 'Sede Centro'),
-    ('Spinning', '2026-04-01 18:00:00'::timestamp, 15, 18.50::decimal(10,2), 'Sede Sur'),
-    ('Cross Training', '2026-04-02 06:30:00'::timestamp, 12, 22.00::decimal(10,2), 'Sede Centro'),
-    ('Pilates', '2026-04-02 17:00:00'::timestamp, 18, 16.75::decimal(10,2), 'Sede Norte'),
-    ('Zumba', '2026-04-03 19:00:00'::timestamp, 25, 12.00::decimal(10,2), 'Sede Sur')
-) AS v(nombre, horario, cupo_max, costo, nombre_sede)
-JOIN sede s
-  ON s.nombre = v.nombre_sede
-WHERE NOT EXISTS (
-  SELECT 1
-  FROM actividad a
-  WHERE a.nombre = v.nombre
-    AND a.horario = v.horario
-    AND a.id_sede = s.id_sede
-);
+VALUES
+('Yoga Matutino', '2026-04-01 08:00:00', 20, 15.00, 1),
+('Spinning', '2026-04-01 18:00:00', 15, 18.50, 2),
+('Cross Training', '2026-04-02 06:30:00', 12, 22.00, 1),
+('Pilates', '2026-04-02 17:00:00', 18, 16.75, 2),
+('Zumba', '2026-04-03 19:00:00', 25, 12.00, 2),
+('Boxeo Inicial', '2026-04-04 07:00:00', 10, 20.00, 1),
+('HIIT Avanzado', '2026-04-04 18:30:00', 15, 25.00, 2),
+('Meditación', '2026-04-05 06:00:00', 12, 10.00, 1);
+select * from actividad;
 
 INSERT INTO reserva (id_persona, id_actividad, fecha_hora, estado, precio_aplicado)
 SELECT p.id_persona, a.id_actividad, v.fecha_hora, v.estado, v.precio_aplicado

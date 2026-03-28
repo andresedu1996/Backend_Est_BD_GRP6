@@ -442,12 +442,13 @@ app.get("/api/actividades", async (_req, res, next) => {
     const result = await pool.query(
       "SELECT id_actividad, nombre, horario, cupo_max, costo, id_sede FROM actividad ORDER BY id_actividad ASC"
     );
-    res.json({
+
+    return res.json({
       ok: true,
       data: result.rows,
     });
   } catch (error) {
-    next(error);
+    return next(error);
   }
 });
 
@@ -458,13 +459,23 @@ app.get("/api/actividades/:id", async (req, res, next) => {
     return sendBadRequest(res, "id_actividad invalido.");
   }
 
-  return getById(
-    res,
-    next,
-    "SELECT id_actividad, nombre, horario, cupo_max, costo, id_sede FROM actividad WHERE id_actividad = $1",
-    id,
-    "Actividad"
-  );
+  try {
+    const result = await pool.query(
+      "SELECT id_actividad, nombre, horario, cupo_max, costo, id_sede FROM actividad WHERE id_actividad = $1",
+      [id]
+    );
+
+    if (result.rows.length === 0) {
+      return sendNotFound(res, "Actividad");
+    }
+
+    return res.json({
+      ok: true,
+      data: result.rows[0],
+    });
+  } catch (error) {
+    return next(error);
+  }
 });
 
 app.post("/api/actividades", async (req, res, next) => {

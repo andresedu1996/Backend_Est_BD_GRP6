@@ -1,0 +1,87 @@
+{
+  "info": {
+    "_postman_id": "8bbd8b6c-c12c-4d0e-9dcd-65d448a011cf",
+    "name": "Reservas",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53204846",
+    "_collection_link": "https://go.postman.co/collection/53204846-8bbd8b6c-c12c-4d0e-9dcd-65d448a011cf?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "POST /api/reservas",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id_persona\": 1,\r\n  \"id_actividad\": 2,\r\n  \"fecha_hora\": \"2026-03-30T09:00:00\",\r\n  \"estado\": \"confirmada\",\r\n  \"precio_aplicado\": 18.5\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/reservas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "reservas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET /api/reservas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/reservas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "reservas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "DELETE /api/reservas/",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/reservas/9",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "reservas",
+            "9"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

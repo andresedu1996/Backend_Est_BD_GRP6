@@ -1,0 +1,11 @@
+{
+    "ok": true,
+    "data": {
+        "id_reserva": 9,
+        "id_persona": 1,
+        "id_actividad": 2,
+        "fecha_hora": "2026-03-30T15:00:00.000Z",
+        "estado": "confirmada",
+        "precio_aplicado": "18.50"
+    }
+}

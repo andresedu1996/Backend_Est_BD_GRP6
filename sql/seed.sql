@@ -2,12 +2,21 @@ BEGIN;
 
 INSERT INTO persona (nombre, correo, fecha_nacimiento, direccion, rol)
 VALUES
-  ('Ana Lopez', 'ana.lopez@example.com', '1998-04-12', 'Col. Palmira, Tegucigalpa', 'cliente'),
-  ('Carlos Mejia', 'carlos.mejia@example.com', '1995-08-29', 'Col. Kennedy, Tegucigalpa', 'cliente'),
-  ('Laura Santos', 'laura.santos@example.com', '1992-02-18', 'Col. Tepeyac, Tegucigalpa', 'administrador'),
-  ('Miguel Rivera', 'miguel.rivera@example.com', '1990-11-03', 'Res. El Trapiche, Tegucigalpa', 'entrenador'),
-  ('Sofia Martinez', 'sofia.martinez@example.com', '2001-06-21', 'Col. Miraflores, Tegucigalpa', 'cliente')
+('Juan Perez', 'juanperez@example.com', '2000-05-10', 'Tegucigalpa, Honduras', 'cliente'),
+('Pabloe Perez', 'pabloperez@example.com', '2000-05-10', 'Colonia Pedregal SPS, Honduras', 'cliente'),
+('Andres Lopez', 'alopez@example.com', '1996-03-08', 'Rio Piedras San Pedro Sula, Honduras', 'cliente'),
+('Ana Lopez', 'ana.lopez@example.com', '1998-04-12', 'Col. Palmira, Tegucigalpa', 'cliente'),
+('Carlos Mejia', 'carlos.mejia@example.com', '1995-08-29', 'Col. Kennedy, Tegucigalpa', 'cliente'),
+('Laura Santos', 'laura.santos@example.com', '1992-02-18', 'Col. Tepeyac, Tegucigalpa', 'administrador'),
+('Miguel Rivera', 'miguel.rivera@example.com', '1990-11-03', 'Res. El Trapiche, Tegucigalpa', 'entrenador'),
+('Sofia Martinez', 'sofia.martinez@example.com', '2001-06-21', 'Col. Miraflores, Tegucigalpa', 'cliente')
+('Luis Herrera', 'luis.herrera@example.com', '1993-07-15', 'Col. Florencia, San Pedro Sula', 'cliente'),
+('Mariana Castillo', 'mariana.castillo@example.com', '1999-01-22', 'Barrio Guamilito, San Pedro Sula', 'cliente'),
+('Jose Alvarez', 'jose.alvarez@example.com', '1988-09-10', 'Col. Trejo, San Pedro Sula', 'entrenador'),
+('Gabriela Torres', 'gabriela.torres@example.com', '1996-03-05', 'Col. Moderna, San Pedro Sula', 'cliente'),
+('Fernando Pineda', 'fernando.pineda@example.com', '1991-12-30', 'Col. Satelite, San Pedro Sula', 'entrenador')
 ON CONFLICT (correo) DO NOTHING;
+select * from persona;
 
 INSERT INTO telefono (id_persona, numero)
 SELECT p.id_persona, v.numero
@@ -30,18 +39,10 @@ WHERE NOT EXISTS (
 );
 
 INSERT INTO sede (nombre, direccion)
-SELECT v.nombre, v.direccion
-FROM (
-  VALUES
-    ('Sede Centro', 'Boulevard Centroamerica, Tegucigalpa'),
-    ('Sede Sur', 'Anillo Periferico, Tegucigalpa'),
-    ('Sede Norte', 'Col. El Hogar, Tegucigalpa')
-) AS v(nombre, direccion)
-WHERE NOT EXISTS (
-  SELECT 1
-  FROM sede s
-  WHERE s.nombre = v.nombre
-);
+VALUES
+('Sede Este', 'Col. Prado Alto, San Pedro Sula'),
+('Sede Oeste', 'Col. Rivera Hernandez, San Pedro Sula');
+select * from sede;
 
 INSERT INTO actividad (nombre, horario, cupo_max, costo, id_sede)
 SELECT v.nombre, v.horario, v.cupo_max, v.costo, s.id_sede

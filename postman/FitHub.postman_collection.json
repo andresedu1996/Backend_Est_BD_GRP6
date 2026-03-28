@@ -38,7 +38,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"nombre\": \"Eduardo Lopez\",\r\n  \"correo\": \"elopez@example.com\",\r\n  \"fecha_nacimiento\": \"1996-03-09\",\r\n  \"direccion\": \"Rio Piedras San Pedro Sula, Honduras\",\r\n  \"rol\": \"entrenador\"\r\n}",
+              "raw": "{\r\n  \"nombre\": \"Fernando Lopez\",\r\n  \"correo\": \"flopez@example.com\",\r\n  \"fecha_nacimiento\": \"1996-03-09\",\r\n  \"direccion\": \"Col Trejo San Pedro Sula, Honduras\",\r\n  \"rol\": \"entrenador\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -46,12 +46,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:3000/api/personas/",
-              "protocol": "http",
+              "raw": "{{baseUrl}}/api/personas/",
               "host": [
-                "localhost"
+                "{{baseUrl}}"
               ],
-              "port": "3000",
               "path": [
                 "api",
                 "personas",
@@ -83,12 +81,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:3000/api/personas/2",
-              "protocol": "http",
+              "raw": "{{baseUrl}}/api/personas/2",
               "host": [
-                "localhost"
+                "{{baseUrl}}"
               ],
-              "port": "3000",
               "path": [
                 "api",
                 "personas",
@@ -104,12 +100,10 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:3000/api/personas/1",
-              "protocol": "http",
+              "raw": "{{baseUrl}}/api/personas/1",
               "host": [
-                "localhost"
+                "{{baseUrl}}"
               ],
-              "port": "3000",
               "path": [
                 "api",
                 "personas",
@@ -125,12 +119,10 @@
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "http://localhost:3000/api/personas/14",
-              "protocol": "http",
+              "raw": "{{baseUrl}}/api/personas/14",
               "host": [
-                "localhost"
+                "{{baseUrl}}"
               ],
-              "port": "3000",
               "path": [
                 "api",
                 "personas",
@@ -166,12 +158,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:3000/api/pagos",
-              "protocol": "http",
+              "raw": "{{baseUrl}}/api/pagos",
               "host": [
-                "localhost"
+                "{{baseUrl}}"
               ],
-              "port": "3000",
               "path": [
                 "api",
                 "pagos"
@@ -201,12 +191,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:3000/api/pagos/10",
-              "protocol": "http",
+              "raw": "{{baseUrl}}/api/pagos/10",
               "host": [
-                "localhost"
+                "{{baseUrl}}"
               ],
-              "port": "3000",
               "path": [
                 "api",
                 "pagos",
@@ -222,12 +210,10 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:3000/api/pagos",
-              "protocol": "http",
+              "raw": "{{baseUrl}}/api/pagos",
               "host": [
-                "localhost"
+                "{{baseUrl}}"
               ],
-              "port": "3000",
               "path": [
                 "api",
                 "pagos"
@@ -247,12 +233,10 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:3000/api/actividades/1",
-              "protocol": "http",
+              "raw": "{{baseUrl}}/api/actividades/1",
               "host": [
-                "localhost"
+                "{{baseUrl}}"
               ],
-              "port": "3000",
               "path": [
                 "api",
                 "actividades",
@@ -268,12 +252,10 @@
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "http://localhost:3000/api/actividades/9",
-              "protocol": "http",
+              "raw": "{{baseUrl}}/api/actividades/9",
               "host": [
-                "localhost"
+                "{{baseUrl}}"
               ],
-              "port": "3000",
               "path": [
                 "api",
                 "actividades",
@@ -304,12 +286,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:3000/api/actividades",
-              "protocol": "http",
+              "raw": "{{baseUrl}}/api/actividades",
               "host": [
-                "localhost"
+                "{{baseUrl}}"
               ],
-              "port": "3000",
               "path": [
                 "api",
                 "actividades"
@@ -339,12 +319,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:3000/api/actividades/1",
-              "protocol": "http",
+              "raw": "{{baseUrl}}/api/actividades/1",
               "host": [
-                "localhost"
+                "{{baseUrl}}"
               ],
-              "port": "3000",
               "path": [
                 "api",
                 "actividades",
@@ -380,12 +358,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:3000/api/reservas",
-              "protocol": "http",
+              "raw": "{{baseUrl}}/api/reservas",
               "host": [
-                "localhost"
+                "{{baseUrl}}"
               ],
-              "port": "3000",
               "path": [
                 "api",
                 "reservas"
@@ -400,12 +376,10 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:3000/api/reservas",
-              "protocol": "http",
+              "raw": "{{baseUrl}}/api/reservas",
               "host": [
-                "localhost"
+                "{{baseUrl}}"
               ],
-              "port": "3000",
               "path": [
                 "api",
                 "reservas"
@@ -420,12 +394,10 @@
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "http://localhost:3000/api/reservas/9",
-              "protocol": "http",
+              "raw": "{{baseUrl}}/api/reservas/9",
               "host": [
-                "localhost"
+                "{{baseUrl}}"
               ],
-              "port": "3000",
               "path": [
                 "api",
                 "reservas",
@@ -461,12 +433,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:3000/api/sedes/3",
-              "protocol": "http",
+              "raw": "{{baseUrl}}/api/sedes/3",
               "host": [
-                "localhost"
+                "{{baseUrl}}"
               ],
-              "port": "3000",
               "path": [
                 "api",
                 "sedes",
@@ -497,12 +467,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:3000/api/sedes",
-              "protocol": "http",
+              "raw": "{{baseUrl}}/api/sedes",
               "host": [
-                "localhost"
+                "{{baseUrl}}"
               ],
-              "port": "3000",
               "path": [
                 "api",
                 "sedes"
@@ -517,12 +485,10 @@
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "http://localhost:3000/api/sedes/6",
-              "protocol": "http",
+              "raw": "{{baseUrl}}/api/sedes/6",
               "host": [
-                "localhost"
+                "{{baseUrl}}"
               ],
-              "port": "3000",
               "path": [
                 "api",
                 "sedes",
@@ -538,16 +504,14 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:3000/api/sedes/6",
-              "protocol": "http",
+              "raw": "{{baseUrl}}/api/sedes/",
               "host": [
-                "localhost"
+                "{{baseUrl}}"
               ],
-              "port": "3000",
               "path": [
                 "api",
                 "sedes",
-                "6"
+                ""
               ]
             }
           },

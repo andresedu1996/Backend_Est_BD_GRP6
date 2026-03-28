@@ -1,0 +1,109 @@
+{
+"ok": true,
+    "data": [
+        {
+            "id_persona": 1,
+            "nombre": "Juan Perez",
+            "correo": "juanperez@example.com",
+            "fecha_nacimiento": "2000-05-10T06:00:00.000Z",
+            "direccion": "Tegucigalpa, Honduras",
+            "rol": "cliente"
+        },
+        {
+            "id_persona": 2,
+            "nombre": "Pablo Perez",
+            "correo": "pabloperez@example.com",
+            "fecha_nacimiento": "2000-05-10T06:00:00.000Z",
+            "direccion": "Col. Pedregal, San Pedro Sula",
+            "rol": "cliente"
+        },
+        {
+            "id_persona": 3,
+            "nombre": "Andres Lopez",
+            "correo": "alopez@example.com",
+            "fecha_nacimiento": "1996-03-08T06:00:00.000Z",
+            "direccion": "Rio Piedras San Pedro Sula, Honduras",
+            "rol": "cliente"
+        },
+        {
+            "id_persona": 4,
+            "nombre": "Ana Lopez",
+            "correo": "ana.lopez@example.com",
+            "fecha_nacimiento": "1998-04-12T06:00:00.000Z",
+            "direccion": "Col. Palmira, Tegucigalpa",
+            "rol": "cliente"
+        },
+        {
+            "id_persona": 5,
+            "nombre": "Carlos Mejia",
+            "correo": "carlos.mejia@example.com",
+            "fecha_nacimiento": "1995-08-29T06:00:00.000Z",
+            "direccion": "Col. Kennedy, Tegucigalpa",
+            "rol": "cliente"
+        },
+        {
+            "id_persona": 6,
+            "nombre": "Laura Santos",
+            "correo": "laura.santos@example.com",
+            "fecha_nacimiento": "1992-02-18T06:00:00.000Z",
+            "direccion": "Col. Tepeyac, Tegucigalpa",
+            "rol": "administrador"
+        },
+        {
+            "id_persona": 7,
+            "nombre": "Miguel Rivera",
+            "correo": "miguel.rivera@example.com",
+            "fecha_nacimiento": "1990-11-03T06:00:00.000Z",
+            "direccion": "Res. El Trapiche, Tegucigalpa",
+            "rol": "entrenador"
+        },
+        {
+            "id_persona": 8,
+            "nombre": "Sofia Martinez",
+            "correo": "sofia.martinez@example.com",
+            "fecha_nacimiento": "2001-06-21T06:00:00.000Z",
+            "direccion": "Col. Miraflores, Tegucigalpa",
+            "rol": "cliente"
+        },
+        {
+            "id_persona": 9,
+            "nombre": "Luis Herrera",
+            "correo": "luis.herrera@example.com",
+            "fecha_nacimiento": "1993-07-15T06:00:00.000Z",
+            "direccion": "Col. Florencia, San Pedro Sula",
+            "rol": "cliente"
+        },
+        {
+            "id_persona": 10,
+            "nombre": "Mariana Castillo",
+            "correo": "mariana.castillo@example.com",
+            "fecha_nacimiento": "1999-01-22T06:00:00.000Z",
+            "direccion": "Barrio Guamilito, San Pedro Sula",
+            "rol": "cliente"
+        },
+        {
+            "id_persona": 11,
+            "nombre": "Jose Alvarez",
+            "correo": "jose.alvarez@example.com",
+            "fecha_nacimiento": "1988-09-10T06:00:00.000Z",
+            "direccion": "Col. Trejo, San Pedro Sula",
+            "rol": "entrenador"
+        },
+        {
+            "id_persona": 12,
+            "nombre": "Gabriela Torres",
+            "correo": "gabriela.torres@example.com",
+            "fecha_nacimiento": "1996-03-05T06:00:00.000Z",
+            "direccion": "Col. Moderna, San Pedro Sula",
+            "rol": "cliente"
+        },
+        {
+            "id_persona": 13,
+            "nombre": "Fernando Pineda",
+            "correo": "fernando.pineda@example.com",
+            "fecha_nacimiento": "1991-12-30T06:00:00.000Z",
+            "direccion": "Col. Satelite, San Pedro Sula",
+            "rol": "entrenador"
+        }
+    ]
+}

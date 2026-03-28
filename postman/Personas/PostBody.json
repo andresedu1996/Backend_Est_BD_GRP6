@@ -1,0 +1,11 @@
+{
+    "ok": true,
+    "data": {
+        "id_persona": 14,
+        "nombre": "Eduardo Lopez",
+        "correo": "elopez@example.com",
+        "fecha_nacimiento": "1996-03-09T06:00:00.000Z",
+        "direccion": "Rio Piedras San Pedro Sula, Honduras",
+        "rol": "entrenador"
+    }
+}

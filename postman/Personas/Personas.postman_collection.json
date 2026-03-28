@@ -1,0 +1,141 @@
+{
+  "info": {
+    "_postman_id": "485e90d1-3084-4ea7-a0d5-1c06b9ecbbc2",
+    "name": "Personas",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53204846",
+    "_collection_link": "https://go.postman.co/collection/53204846-485e90d1-3084-4ea7-a0d5-1c06b9ecbbc2?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Post API Personas Copy",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Eduardo Lopez\",\r\n  \"correo\": \"elopez@example.com\",\r\n  \"fecha_nacimiento\": \"1996-03-09\",\r\n  \"direccion\": \"Rio Piedras San Pedro Sula, Honduras\",\r\n  \"rol\": \"entrenador\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/personas/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "personas",
+            ""
+          ]
+        },
+        "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+      },
+      "response": []
+    },
+    {
+      "name": "PUT /api/personas/ Copy",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Pablo Perez\",\r\n  \"correo\": \"pabloperez@example.com\",\r\n  \"fecha_nacimiento\": \"2000-05-10\",\r\n  \"direccion\": \"Col. Pedregal, San Pedro Sula\",\r\n  \"rol\": \"cliente\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/personas/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "personas",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get /api/personas/1 Copy",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/personas/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "personas",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "DELETE /api/personas Copy",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/personas/14",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "personas",
+            "14"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

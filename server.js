@@ -840,12 +840,13 @@ app.get("/api/pagos", async (_req, res, next) => {
     const result = await pool.query(
       "SELECT id_pago, id_reserva, id_membresia, fecha, monto, metodo, referencia FROM pago ORDER BY id_pago ASC"
     );
-    res.json({
+
+    return res.json({
       ok: true,
       data: result.rows,
     });
   } catch (error) {
-    next(error);
+    return next(error);
   }
 });
 
@@ -856,13 +857,23 @@ app.get("/api/pagos/:id", async (req, res, next) => {
     return sendBadRequest(res, "id_pago invalido.");
   }
 
-  return getById(
-    res,
-    next,
-    "SELECT id_pago, id_reserva, id_membresia, fecha, monto, metodo, referencia FROM pago WHERE id_pago = $1",
-    id,
-    "Pago"
-  );
+  try {
+    const result = await pool.query(
+      "SELECT id_pago, id_reserva, id_membresia, fecha, monto, metodo, referencia FROM pago WHERE id_pago = $1",
+      [id]
+    );
+
+    if (result.rows.length === 0) {
+      return sendNotFound(res, "Pago");
+    }
+
+    return res.json({
+      ok: true,
+      data: result.rows[0],
+    });
+  } catch (error) {
+    return next(error);
+  }
 });
 
 app.post("/api/pagos", async (req, res, next) => {

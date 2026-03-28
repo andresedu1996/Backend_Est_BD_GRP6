@@ -573,12 +573,13 @@ app.get("/api/reservas", async (_req, res, next) => {
     const result = await pool.query(
       "SELECT id_reserva, id_persona, id_actividad, fecha_hora, estado, precio_aplicado FROM reserva ORDER BY id_reserva ASC"
     );
-    res.json({
+
+    return res.json({
       ok: true,
       data: result.rows,
     });
   } catch (error) {
-    next(error);
+    return next(error);
   }
 });
 
@@ -589,13 +590,23 @@ app.get("/api/reservas/:id", async (req, res, next) => {
     return sendBadRequest(res, "id_reserva invalido.");
   }
 
-  return getById(
-    res,
-    next,
-    "SELECT id_reserva, id_persona, id_actividad, fecha_hora, estado, precio_aplicado FROM reserva WHERE id_reserva = $1",
-    id,
-    "Reserva"
-  );
+  try {
+    const result = await pool.query(
+      "SELECT id_reserva, id_persona, id_actividad, fecha_hora, estado, precio_aplicado FROM reserva WHERE id_reserva = $1",
+      [id]
+    );
+
+    if (result.rows.length === 0) {
+      return sendNotFound(res, "Reserva");
+    }
+
+    return res.json({
+      ok: true,
+      data: result.rows[0],
+    });
+  } catch (error) {
+    return next(error);
+  }
 });
 
 app.post("/api/reservas", async (req, res, next) => {
